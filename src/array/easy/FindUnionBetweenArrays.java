@@ -45,31 +45,30 @@ public class FindUnionBetweenArrays {
         int j = 0;
         int m = arr1.length;
         int n = arr2.length;
-        int size = list.size();
 
         while (i < m && j < n) {
             if (arr1[i] <= arr2[j]) {
                 // check if it is already present in the list
-                if (size == 0 || list.get(size - 1) != arr1[i]) {
+                if (list.size() == 0 || list.get(list.size() - 1) != arr1[i]) {
                     list.add(arr1[i]);
                 }
                 i++;
             } else {
-                if (size == 0 || list.get(size - 1) != arr2[j]) {
+                if (list.size() == 0 || list.get(list.size() - 1) != arr2[j]) {
                     list.add(arr2[j]);
                 }
                 j++;
             }
         }
         while (i < m) {
-            if (size == 0 || list.get(size - 1) != arr1[i]) {
+            if (list.size() == 0 || list.get(list.size() - 1) != arr1[i]) {
                 list.add(arr1[i]);
             }
             i++;
         }
 
         while (j < n) {
-            if (size == 0 || list.get(size - 1) != arr2[j]) {
+            if (list.size() == 0 || list.get(list.size() - 1) != arr2[j]) {
                 list.add(arr2[j]);
             }
             j++;
